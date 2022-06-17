@@ -1,0 +1,28 @@
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.loginForm input {
+  margin: 5rem;
+}
+.signupForm input {
+  margin: 5rem;
+}
