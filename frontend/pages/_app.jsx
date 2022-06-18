@@ -1,10 +1,13 @@
 import { SessionProvider } from "next-auth/react";
+import Role from "../components/core/Role";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <Role>
+        <Component {...pageProps} />
+      </Role>
     </SessionProvider>
   );
 }

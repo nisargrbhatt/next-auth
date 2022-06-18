@@ -7,6 +7,14 @@ const USERS = [
     email: "test@test.com",
     password: "test",
     metas: "Meta data",
+    role: "Student",
+  },
+  {
+    name: "Test Tutor",
+    email: "test1@test.com",
+    password: "test",
+    metas: "Meta data",
+    role: "Tutor",
   },
 ];
 

@@ -13,14 +13,13 @@ export default function Home({ csrfToken }) {
       redirect: false,
       email: values.email,
       password: values.password,
-      callbackUrl: `${window.location.origin}/profile`,
     });
     if (res?.error) {
       setError(res.error);
     } else {
       setError(null);
     }
-    if (res.url) router.push(res.url);
+    if (res) router.push(res.url);
     setSubmitting(false);
   };
   // const signupHandler = (values) => {
@@ -91,12 +90,13 @@ export default function Home({ csrfToken }) {
 }
 
 export async function getServerSideProps(context) {
-  const session = getSession(context);
+  const session = await getSession(context);
+  console.log("Index Session: ", session);
   if (session) {
     return {
       redirect: {
         permenent: false,
-        destination: "/profile",
+        destination: `/${session.user.details.role.toLowerCase()}/profile`,
       },
       props: {},
     };
